@@ -2,3 +2,4 @@
 
 # cpp_front
 - https://github.com/hsutter/cppfront
+  - https://github.com/modern-cmake/cppfront
