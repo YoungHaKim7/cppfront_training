@@ -15,7 +15,7 @@ parse.h \
 reflect.h2 \
 to_cpp1.h
 
-TARGET = ./target/main
+TARGET = ./target/cppfront
 LDFLAGS_COMMON = -std=c++2b -pedantic -pthread -pedantic-errors -Wall -Wextra -ggdb
 LDFLAGS_DEBUG = -c -std=c++2b -pthread -lm -Wall -Wextra -ggdb
 LDFLAGS_EMIT_LLVM = -S -emit-llvm
