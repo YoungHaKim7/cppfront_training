@@ -1,3 +1,34 @@
+.DS_Store
+
+*.vcxproj
+*.filters
+*.recipe
+*.user
+*.ilk
+*.log
+*.enc
+*.tlog
+*.idb
+*.obj
+*.pdb
+*.suo
+*.db
+*.ipch
+*.sln
+*.txt
+*.db-shm
+*.db-wal
+*.opendb
+*.vsidx
+*.lock
+.editorconfig
+*.xml
+*.sarif
+*.bin
+*.exe
+source/gen_version.bat
+
+
 # Prerequisites
 *.d
 
