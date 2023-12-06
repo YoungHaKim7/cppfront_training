@@ -25,3 +25,6 @@ r:
 		mv *.o ./target/
 		$(CXX_GPP) ./target/*.o -o $(TARGET) 
 		$(TARGET)
+
+clean:
+		rm -rf ./target *.out ./src/*.out *.bc ./src/target/ *.dSYM ./src/*.dSYM ./src/*.cpp ./cppfront
