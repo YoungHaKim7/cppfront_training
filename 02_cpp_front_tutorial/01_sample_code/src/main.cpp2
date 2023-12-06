@@ -1,16 +1,14 @@
-// mixed-allcpp1-hello.cpp2
+first: (forward rng) -> forward _
+  pre<Bounds>( !std::empty(rng) )
+=
+    std::begin(rng)*;
 
-//  Step 1: rename .cpp to .cpp2
+global: const int = 42;
+f: () -> forward const int = { return global; }
 
-#include <iostream>
-#include <string>
-
-#pragma auto_inline(on)
-
-//  Here's a sample Syntax 1 "Hello world"...
-
-auto main() -> int
-{
-    auto s = std::string{"world\n"};
-    std::cout << "Hello " << s;
+main: () -> int = {
+    v : std::vector = (1,2,3);
+    first(v) = 4;
+    std::cout << first(v) << std::endl; // prints: 4
+    std::cout << f() << std::endl; // prints: 42
 }

@@ -7,7 +7,7 @@ SOURCE_CXX = ./src/main.cpp
 SOURCE_CXX_OBJ = ./target/main.o
 CXX2_LINK_OBJ = -c ./src/cpp2util.h
 
-TARGET = ./target/cppfront
+TARGET = ./target/a.out
 LDFLAGS_COMMON = -std=c++2b -pedantic -pthread -pedantic-errors -Wall -Wextra -ggdb
 LDFLAGS_DEBUG = -c -std=c++2b -pthread -lm -Wall -Wextra -ggdb
 LDFLAGS_EMIT_LLVM = -S -emit-llvm
@@ -19,12 +19,12 @@ LDFLAGS_FSANITIZE_VALGRIND = -fsanitize=address -g3 -std=c++2b
 r:
 		rm -rf target
 		mkdir target
+		cp -rf ../cpp2util.h ./src/.
+		cp -rf ../cppfront ./.
 		$(CXX2_CPPFRONT) ./src/main.cpp2 -p
-		mv *.cpp ./src/
 		$(CXX_GPP) $(LINK_OBJ) $(LDFLAGS_COMMON) $(SOURCE_CXX)
-		mv *.o ./target/
-		$(CXX_GPP) ./target/*.o -o $(TARGET) 
+		mv *.out ./target/
 		$(TARGET)
 
 clean:
-		rm -rf ./target *.out ./src/*.out *.bc ./src/target/ *.dSYM ./src/*.dSYM ./src/*.cpp ./cppfront
+		rm -rf ./target *.out ./src/*.out *.bc ./src/target/ *.dSYM ./src/*.dSYM ./src/*.cpp ./cppfront ./src/cpp2util.h
