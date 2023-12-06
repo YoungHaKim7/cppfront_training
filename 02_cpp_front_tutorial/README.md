@@ -36,3 +36,7 @@ r:
 clean:
 		rm -rf ./target *.out ./src/*.out *.bc ./src/target/ *.dSYM ./src/*.dSYM ./src/*.cpp ./cppfront ./src/cpp2util.h
 ```
+
+
+# Can C++ be 10x Simpler & Safer? - Herb Sutter - CppCon 2022 | CppCon
+- https://youtu.be/ELeZAKCN4tY?si=FiU3rE9xmqbXq3fk
