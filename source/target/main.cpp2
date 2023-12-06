@@ -1,7 +1,0 @@
-main: () -> int = {
-  hello("world\n");
-}
-
-hello: (msg: _) =
-  std::cout << "hello " << msg;
-
