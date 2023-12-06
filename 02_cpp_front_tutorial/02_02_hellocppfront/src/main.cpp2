@@ -1,0 +1,60 @@
+///* lang:cpp */
+// #include <iostream>
+// #include <string>
+///* lang:end */
+
+print: (thing: _) =
+    std::cout << ">> " << thing << "\n";
+
+///* lang:cpp */
+// auto say_hello() -> int {
+//     std::cout << "Hello  " << name() << "\n";
+// }
+///* lang:end */
+
+decorate_and_print: (inout thing:_) = {
+    thing = "[" + thing + "]";
+    print(thing);
+}
+
+name: () -> std::string = {
+    s: std::string = "world";
+    decorate(s);
+    return s;
+}
+
+decorate: (inout s: std::string) = {
+    s = "[" + s + "]";
+}
+
+main: () -> int = {
+    std::cout << "Hello " << name() << "\n";
+    words: std::vector<std::string> =
+        ( "hello", "big", "world");
+    view: std::span<std::string> = words;
+
+    i := new<int>(0);
+    while i* < view.ssize() next i*++ {
+        print( view[i*]);
+    }
+
+    do {
+        std::cout << std::setw(4) << "**";
+    } while i* > 1 next i*--;
+
+    std::cout << "\n";
+    for words do (inout word)
+        decorate_and_print(word);
+}
+
+// test generic: (x: _, msg: _) = {
+//     std::cout
+//         << std::setw(30) << msg
+//         << " value is "
+//         << inspect x -> std::string {
+//             is int = "integer " + std::to_string(x as int);
+//             is std::string = '"' + x as std::string + '"';
+//             is _ = "not an int or string";
+//         }
+//         << "\n";
+// }
