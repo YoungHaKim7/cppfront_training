@@ -1,4 +1,6 @@
 # cppfront_training
+- (내가 공부하려고 정리)001_개고생하면서 배우는 C++front
+  - https://youtube.com/live/HQ9lhS9U6u0?feature=share
 
 # cpp_front
 
